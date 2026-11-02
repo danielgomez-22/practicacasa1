@@ -1,0 +1,16 @@
+<p>subir-imagenes-component works!</p>
+<input #miArchivo type="file" accept="image/*">
+<button (click)="subirImagen(miArchivo)">Subir</button>
+
+<!-- mostramos las imagenes-->
+<div class="mt-6">
+    <h3 class="text-lg font-bold text-gray-800 mb-3">Galería de imágenes:</h3>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        @for (imagen of listaImagenes; track $index) {
+            <div class="border border-gray-200 rounded-xl p-2 shadow-sm bg-white">
+                <img [src]="imagen" alt="Imagen subida" class="w-full h-32 object-cover rounded-lg" style="width: 300px; height: 300px;">
+            </div>
+        }
+    </div>
+</div> 

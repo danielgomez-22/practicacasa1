@@ -1,0 +1,9 @@
+
+<h1> Inicia Sesion</h1>
+<form #formLogin="ngForm">
+    <label>Usuario:</label>
+    <input type="text" name="cajausuario" #cajausuario>
+    <label>Contraseña:</label>
+    <input type="password" name="cajapassword" #cajapassword>
+    <button type="button" (click)="login()">Iniciar Sesion</button>
+</form>

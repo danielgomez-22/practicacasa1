@@ -1,0 +1,47 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container-xxl">
+    
+    <!-- Logo / Marca -->
+    <a class="navbar-brand fw-bold text-primary" href="#">MiLogo</a>
+
+    <!-- Botón Menú Móvil (Hamburguesa) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenido del Navbar -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      
+      <!-- Enlaces de navegación -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+        <li class="nav-item">
+          <a class="nav-link active fw-medium" [routerLink]="['/']">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-medium" [routerLink]="['/perfil']">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-medium" [routerLink]="['/subordinados']">Subordinados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-medium" [routerLink]="['/subir-imagenes']">Imagenes</a>
+        </li>
+        <li>
+            @if(usuario(); as dato){
+                <p>{{dato.apellido}}</p>
+            }@else {
+                <p style="color: red;">Usuario no encontrado</p>
+            }
+        </li>
+      </ul>
+
+      <!-- Botones de Acción -->
+      <div class="d-flex align-items-center gap-3">
+        <a href="#" class="text-decoration-none text-primary fw-medium">Iniciar sesión</a>
+        <button (click)="cerrarSesion()" class="btn btn-primary">Cerrar Sesion</button>
+      </div>
+
+    </div>
+  </div>
+</nav>

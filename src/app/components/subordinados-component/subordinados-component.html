@@ -1,0 +1,17 @@
+
+
+<div class="mt-4">
+    <h3 class="text-lg font-bold text-gray-800 mb-4">Lista de Subordinados</h3>
+
+    <!-- Contenedor de la lista o tabla -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        @for (empleado of subordinados; track empleado.idEmpleado) {
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm space-y-2">
+                <!-- Ajusta las propiedades 'nombre', 'apellido', 'oficio', etc., según tu modelo 'Empleado' -->
+                <h4 class="font-bold text-indigo-600 text-lg">{{ empleado.apellido }}</h4>
+                <p class="text-sm text-gray-600"><span class="font-medium">Oficio:</span> {{ empleado.oficio }}</p>
+                <p class="text-sm text-gray-600"><span class="font-medium">Salario:</span> {{ empleado.salario }} €</p>
+            </div>
+        }
+    </div>
+</div>
